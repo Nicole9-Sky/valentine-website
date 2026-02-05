@@ -16,10 +16,14 @@ function nextSlide() {
 
 // YES button
 function startValentine() {
-  document.getElementById("bgMusic").play();
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.8;   // good volume (0.0 – 1.0)
+  music.play();
+
   current = 1;
   showSlide(current);
 }
+
 
 // GIFT button — ROSE OPENS HERE
 function openGift() {
