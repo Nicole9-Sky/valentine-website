@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I Love You Sissy M 💖</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+/* 🌸 BACKGROUND */
+body {
+  background: url("fairy-bg.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎶 MUSIC */
+audio {
+  display: none;
+}
+
+/* 🌹 FLOATING ROSES */
+.rose {
+  position: fixed;
+  top: -10%;
+  width: 40px;
+  pointer-events: none;
+  animation: float linear infinite;
+  opacity: 0.95;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-120px) translateY(120vh) rotate(360deg);
+  }
+}
+
+/* ✨ SPARKLES */
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+}
+
+/* 💖 HEARTS */
+.heart {
+  position: fixed;
+  font-size: 18px;
+  animation: heartFloat 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes heartFloat {
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 💌 CENTER MESSAGE */
+.message-box {
+  position: relative;
+  z-index: 10;
+  padding: 70px 90px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 35px;
+  box-shadow: 0 0 100px rgba(255, 0, 120, 0.7);
+  text-align: center;
+}
+
+/* 🌟 GLOWING TEXT */
+.message-box h1 {
+  font-size: 80px;
+  color: #c2185b;
+  animation: glow 4s ease-in-out infinite alternate;
+  margin: 0;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 0, 120, 0.6);
+  }
+  to {
+    text-shadow: 0 0 50px rgba(255, 0, 120, 1);
+  }
+}
+
+.message-box p {
+  margin-top: 25px;
+  font-size: 28px;
+  color: #8b1c3d;
+  line-height: 1.7;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+  .message-box {
+    padding: 40px 30px;
+  }
+  .message-box h1 {
+    font-size: 46px;
+  }
+  .message-box p {
+    font-size: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 SOFT ROMANTIC MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2c1c59c6b7.mp3">
+</audio>
+
+<div class="message-box">
+  <h1>I LOVE YOU<br>SISSY M 💖</h1>
+  <p>
+    You are kindness made human.<br>
+    Gentle in spirit, wise in heart,<br>
+    loving without limits.<br><br>
+
+    Thank you for being my light,<br>
+    my comfort, my forever sister.<br><br>
+
+    The world blooms brighter because of you 🌸
+  </p>
+</div>
+
+<script>
+/* 🌹 ROSES */
+for (let i = 0; i < 80; i++) {
+  const rose = document.createElement("img");
+  rose.src = "rose.png";
+  rose.className = "rose";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.animationDuration = 6 + Math.random() * 8 + "s";
+  rose.style.animationDelay = Math.random() * 5 + "s";
+  rose.style.width = 30 + Math.random() * 30 + "px";
+  document.body.appendChild(rose);
+}
+
+/* ✨ SPARKLES */
+for (let i = 0; i < 60; i++) {
+  const s = document.createElement("div");
+  s.className = "sparkle";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDelay = Math.random() * 3 + "s";
+  document.body.appendChild(s);
+}
+
+/* 💖 HEARTS */
+for (let i = 0; i < 30; i++) {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "💖";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.bottom = "-20px";
+  h.style.animationDuration = 4 + Math.random() * 4 + "s";
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
